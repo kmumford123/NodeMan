@@ -2,7 +2,7 @@ var Word = require("./word");
 var data = require("./data");
 
 
-// var result = new conLetter("a");
+// var result = new Letters("a");
 // console.log(result.rVal());
 // result.check("a");
 // console.log(result.rVal());

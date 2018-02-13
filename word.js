@@ -4,19 +4,20 @@ var Letters = require("./letters");
 
 function Word(xword) {
 
-    this.wordArray = xword.split("");
+    this.wordArray = xword.split("").map(element => {
+        return new Letters(element)
+    });
+
     this.wordOutput = this.wordArray.join(" ");
-    this.wordLogic = function() {
-        this.wordArray.forEach(element => {
-            var result = new Letters(element);
-            console.log(result.rVal());
+    var dasharray = [];
+
+    this.wordLogic = function(char) {
+        return this.wordArray.map(letter => {
+            // var result = new Letters(element);
+            letter.check(char);
+            return letter.rVal()
         });
-        // console.log(wordLogic);
+        // console.log(dasharray.join(" "));
     };
-
-    // console.log(wordLogic.rVal());
 }
-
-
-
 module.exports = Word;
